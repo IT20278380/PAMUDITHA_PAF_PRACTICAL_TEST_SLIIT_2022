@@ -15,12 +15,14 @@ $(document).on("click", "#butRegister", function(event) {
 	 
 	// Form validation-------------------
 	var status = validateForm(); 
+
 	if (status != true) { 
 		 $("#alertError").text(status); 
 		 $("#alertError").show(); 
 		 return; 
 	} 
 	// If valid------------------------
+
 	var type = "POST"; 
 	 $.ajax( { 
 		 url : "http://localhost:8080/IT20278380_PAF_Practical_Text/ElectroG/Customers/Add", 
@@ -32,7 +34,6 @@ $(document).on("click", "#butRegister", function(event) {
 		 }
 	 });
 }); 
-
 
 // View Profile================================================================
 $(document).on("click", "#butView", function(event) { 
@@ -575,7 +576,7 @@ function onBillComplete(response, status) {
 			 $("#divViewGrid").html(resultSet.data);
 			 
 		 } else if (resultSet.status.trim() == "Error while View the Bill") { 
-			 $("#alertError").text(resultSet.data); 
+			 $("#alertError").text("Error while View the Bill"); 
 			 $("#alertError").show(); 
 		 } 
 		 
